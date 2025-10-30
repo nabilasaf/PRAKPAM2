@@ -10,8 +10,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -49,16 +52,23 @@ fun FormPendaftaran (modifier: Modifier){
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold)
 
+
         Spacer(modifier= Modifier.height(height = 25.dp))
 
-        Card (modifier = Modifier
-            .fillMaxWidth(fraction = 1f)
-            .padding(all = 15.dp),
-            colors = CardDefaults.cardColors(
-                containerColor = Color.DarkGray
-            )){
-            Row(){}
+        Column (modifier = Modifier.padding(50.dp),
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally) {
+                OutlinedTextField(
+                value = textNama,
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier.width(width = 250.dp),
+                label = {Text(text = "Nama Lengkap") },
+                onValueChange = {
+                    textNama = it
+                })
         }
+
     }
 
 }
