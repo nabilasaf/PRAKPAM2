@@ -45,6 +45,7 @@ fun FormPendaftaran (modifier: Modifier){
         Text(text = stringResource(id= R.string.pendaftaran),
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold)
+        Spacer(modifier= Modifier.height(height = 25.dp))
 
     }
 
