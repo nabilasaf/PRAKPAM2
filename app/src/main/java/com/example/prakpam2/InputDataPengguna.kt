@@ -1,5 +1,7 @@
 package com.example.prakpam2
 
+import android.text.style.BackgroundColorSpan
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -44,13 +46,22 @@ fun FormPendaftaran (modifier: Modifier){
     val gender:List<String> = listOf("Laki-laki","Perempuan")
     val status: List<String> = listOf("Janda","Lajang","Duda","Menikah")
 
-    Column (modifier = Modifier.padding(top = 100.dp)
+    Column (modifier = Modifier.padding(top = 50.dp)
         .fillMaxWidth(),
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
+
     ){
-        Text(text = stringResource(id= R.string.pendaftaran),
-            fontSize = 30.sp,
-            fontWeight = FontWeight.Bold)
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .background(color = Color.Cyan)
+            .padding(top = 70.dp)
+        ) {
+            Text(text = stringResource(id= R.string.pendaftaran),
+                fontSize = 30.sp,
+                fontWeight = FontWeight.Bold,
+            )
+
+        }
 
 
         Spacer(modifier= Modifier.height(height = 25.dp))
