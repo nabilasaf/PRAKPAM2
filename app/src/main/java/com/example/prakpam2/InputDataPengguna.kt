@@ -46,7 +46,7 @@ fun FormPendaftaran (modifier: Modifier){
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold)
         Spacer(modifier= Modifier.height(height = 25.dp))
-
+        Card {  }
     }
 
 }
