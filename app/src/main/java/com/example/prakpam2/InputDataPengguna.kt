@@ -13,13 +13,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CardElevation
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -34,6 +37,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Outline
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -69,14 +73,26 @@ fun FormPendaftaran (modifier: Modifier){
             )
 
         }
-        Spacer(modifier= Modifier.height(height = 15.dp))
+        Spacer(modifier= Modifier.height(height = 1.dp))
+        Card (modifier = Modifier
+            .background(color = Color.LightGray)
+            .fillMaxWidth(fraction = 1f)
+            .fillMaxSize(fraction = 1f)
+            .padding(all = 20.dp),
 
-        Column (modifier = Modifier
-            .fillMaxSize()
-            .padding(all = 20.dp)
-            .clip(shape = RoundedCornerShape(size = 20.dp))
-            .background(color = Color.DarkGray)
-            ){  }
+            colors = CardDefaults.cardColors(
+                containerColor = Color.White)){
+            OutlinedTextField(
+                value = textNama,
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                modifier = Modifier.width(width = 250.dp),
+                label = {Text(text = "Nama Lengkap") },
+                onValueChange = {
+                    textNama = it
+                })
+        }
+
 
     }
 
