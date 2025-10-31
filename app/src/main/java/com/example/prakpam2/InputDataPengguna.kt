@@ -66,12 +66,14 @@ fun FormPendaftaran (modifier: Modifier){
     ){
         Box(modifier = Modifier
             .fillMaxWidth()
-            .background(color = Color.Cyan)
+            .background(color = Color.DarkGray)
             .padding(top = 70.dp)
         ) {
             Text(text = stringResource(id= R.string.pendaftaran),
-                fontSize = 35.sp,
+                fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
+                fontFamily = FontFamily.Serif,
+                color = Color.White,
             )
 
         }
