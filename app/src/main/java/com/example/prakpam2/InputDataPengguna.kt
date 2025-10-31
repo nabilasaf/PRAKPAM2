@@ -92,7 +92,7 @@ fun FormPendaftaran (modifier: Modifier){
                 color = Color.Black,
                 modifier = Modifier.padding(top = 10.dp)
                     .padding(horizontal = 20.dp))
-            Spacer(modifier= Modifier.height(height = 15.dp))
+            Spacer(modifier= Modifier.height(height = 10.dp))
             OutlinedTextField(
                 value = textNama,
                 singleLine = true,
@@ -114,6 +114,31 @@ fun FormPendaftaran (modifier: Modifier){
             Spacer(modifier= Modifier.height(height = 10.dp))
             Column {
                 gender.forEach { item ->
+                    Row(modifier = Modifier.selectable(
+                        selected = textJK == item,
+                        onClick = { textJK = item }
+                    ), verticalAlignment = Alignment.CenterVertically) {
+                        RadioButton(
+                            selected = textJK == item,
+                            onClick = {
+                                textJK = item
+                            }
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
+            Spacer(modifier= Modifier.height(height = 10.dp))
+            Text(text = stringResource(id = R.string.Status),
+                fontSize = 20.sp,
+                fontFamily = FontFamily.Serif,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black,
+                modifier = Modifier.padding(top = 10.dp)
+                    .padding(horizontal = 20.dp))
+            Spacer(modifier= Modifier.height(height = 10.dp))
+            Column  {
+                status.forEach { item ->
                     Row(modifier = Modifier.selectable(
                         selected = textJK == item,
                         onClick = { textJK = item }
