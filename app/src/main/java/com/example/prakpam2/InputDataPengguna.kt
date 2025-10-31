@@ -153,6 +153,25 @@ fun FormPendaftaran (modifier: Modifier){
                     }
                 }
             }
+            Spacer(modifier= Modifier.height(height = 1.dp))
+            Text(text = stringResource(id = R.string.Alamat),
+                fontSize = 20.sp,
+                fontFamily = FontFamily.Serif,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black,
+                modifier = Modifier.padding(top = 10.dp)
+                    .padding(horizontal = 20.dp))
+            Spacer(modifier= Modifier.height(height = 10.dp))
+            OutlinedTextField(
+                value = textAlamat,
+                singleLine = true,
+                modifier = Modifier.width(width = 400.dp)
+                    .padding(horizontal = 20.dp),
+                leadingIcon = {Text(text = "Alamat",
+                    modifier = Modifier.padding(start = 5.dp))},
+                onValueChange = {
+                    textAlamat = it
+                })
 
         }
 
