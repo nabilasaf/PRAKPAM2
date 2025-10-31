@@ -74,7 +74,7 @@ fun FormPendaftaran (modifier: Modifier){
             )
 
         }
-        Spacer(modifier= Modifier.height(height = 1.dp))
+        Spacer(modifier= Modifier.height(height = 0.dp))
         Card (modifier = Modifier
             .background(color = Color.LightGray)
             .fillMaxWidth(fraction = 1f)
@@ -89,7 +89,7 @@ fun FormPendaftaran (modifier: Modifier){
                 fontSize = 20.sp,
                 fontFamily = FontFamily.Serif,
                 fontWeight = FontWeight.Bold,
-                color = Color.DarkGray,
+                color = Color.Black,
                 modifier = Modifier.padding(top = 10.dp)
                     .padding(horizontal = 20.dp))
             Spacer(modifier= Modifier.height(height = 15.dp))
@@ -103,6 +103,32 @@ fun FormPendaftaran (modifier: Modifier){
                 onValueChange = {
                     textNama = it
                 })
+            Spacer(modifier= Modifier.height(height = 10.dp))
+            Text(text = stringResource(id = R.string.Jenis),
+                fontSize = 20.sp,
+                fontFamily = FontFamily.Serif,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black,
+                modifier = Modifier.padding(top = 10.dp)
+                    .padding(horizontal = 20.dp))
+            Spacer(modifier= Modifier.height(height = 10.dp))
+            Column {
+                gender.forEach { item ->
+                    Row(modifier = Modifier.selectable(
+                        selected = textJK == item,
+                        onClick = { textJK = item }
+                    ), verticalAlignment = Alignment.CenterVertically) {
+                        RadioButton(
+                            selected = textJK == item,
+                            onClick = {
+                                textJK = item
+                            }
+                        )
+                        Text(text = item)
+                    }
+                }
+            }
+
         }
 
 

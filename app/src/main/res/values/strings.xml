@@ -3,4 +3,5 @@
     <string name="Submit">Submit</string>
     <string name="pendaftaran">Formulir Pendaftaran</string>
     <string name="Nama">Nama Lengkap</string>
+    <string name="Jenis">Jenis Kelamin</string>
 </resources>
