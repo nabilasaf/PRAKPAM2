@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CardElevation
@@ -56,7 +57,7 @@ fun FormPendaftaran (modifier: Modifier){
     var StatusPerkawinan by remember { mutableStateOf(value = " ") }
 
     val gender:List<String> = listOf("Laki-laki","Perempuan")
-    val status: List<String> = listOf("Janda","Lajang","Duda","Menikah")
+    var status: List<String> = listOf("Janda","Lajang","Duda","Menikah")
 
     Column (modifier = Modifier.padding(top = 50.dp)
         .fillMaxWidth(),
@@ -97,7 +98,7 @@ fun FormPendaftaran (modifier: Modifier){
                 value = textNama,
                 singleLine = true,
                 modifier = Modifier.width(width = 400.dp)
-                    .padding(horizontal = 20.dp),
+                    .padding(horizontal = 10.dp),
                 leadingIcon = {Text(text = "Isi Nama Lengkap",
                     modifier = Modifier.padding(start = 5.dp))},
                 onValueChange = {
@@ -166,13 +167,25 @@ fun FormPendaftaran (modifier: Modifier){
                 value = textAlamat,
                 singleLine = true,
                 modifier = Modifier.width(width = 400.dp)
-                    .padding(horizontal = 20.dp),
+                    .padding(horizontal = 10.dp),
                 leadingIcon = {Text(text = "Alamat",
                     modifier = Modifier.padding(start = 5.dp))},
                 onValueChange = {
                     textAlamat = it
                 })
-
+            Spacer(modifier= Modifier.height(height = 10.dp))
+            Button(modifier = Modifier.padding(horizontal = 50.dp)
+                .width(width = 500.dp),
+                enabled = textAlamat.isNotEmpty(),
+                onClick = {
+                    nama=textNama
+                    jenis=textJK
+                    alamat=textAlamat
+                    status= listOf(textSP)
+                }
+            ){
+                Text(text = stringResource(id = R.string.Submit))
+            }
         }
 
 
