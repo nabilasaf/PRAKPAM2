@@ -70,6 +70,7 @@ fun FormPendaftaran (modifier: Modifier){
             .padding(top = 70.dp)
         ) {
             Text(text = stringResource(id= R.string.pendaftaran),
+                modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
                 fontSize = 30.sp,
                 fontWeight = FontWeight.Bold,
                 fontFamily = FontFamily.Serif,
