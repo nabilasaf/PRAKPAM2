@@ -1,6 +1,7 @@
 package com.example.prakpam2
 
 import android.text.style.BackgroundColorSpan
+import androidx.compose.animation.expandVertically
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -59,7 +60,7 @@ fun FormPendaftaran (modifier: Modifier){
 
     Column (modifier = Modifier.padding(top = 50.dp)
         .fillMaxWidth(),
-        verticalArrangement = Arrangement.Center,
+        verticalArrangement = Arrangement.Center
 
     ){
         Box(modifier = Modifier
@@ -81,13 +82,24 @@ fun FormPendaftaran (modifier: Modifier){
             .padding(all = 20.dp),
 
             colors = CardDefaults.cardColors(
-                containerColor = Color.White)){
+                containerColor = Color.White))
+        {
+            Spacer(modifier= Modifier.height(height = 20.dp))
+            Text(text = stringResource(id = R.string.Nama),
+                fontSize = 20.sp,
+                fontFamily = FontFamily.Serif,
+                fontWeight = FontWeight.Bold,
+                color = Color.DarkGray,
+                modifier = Modifier.padding(top = 10.dp)
+                    .padding(horizontal = 20.dp))
+            Spacer(modifier= Modifier.height(height = 15.dp))
             OutlinedTextField(
                 value = textNama,
                 singleLine = true,
-                shape = MaterialTheme.shapes.large,
-                modifier = Modifier.width(width = 250.dp),
-                label = {Text(text = "Nama Lengkap") },
+                modifier = Modifier.width(width = 400.dp)
+                    .padding(horizontal = 20.dp),
+                leadingIcon = {Text(text = "Isi Nama Lengkap",
+                    modifier = Modifier.padding(start = 5.dp))},
                 onValueChange = {
                     textNama = it
                 })
